@@ -10,6 +10,7 @@ RUN yum update -y
 RUN yum install -y which tar
 
 # install rvm
+RUN curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 RUN curl -L get.rvm.io | bash -s stable
 RUN source /etc/profile.d/rvm.sh
 RUN /bin/bash -l -c "rvm requirements"
